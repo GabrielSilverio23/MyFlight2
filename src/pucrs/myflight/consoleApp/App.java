@@ -1,9 +1,6 @@
 package pucrs.myflight.consoleApp;
 
-import pucrs.myflight.modelo.GerenciadorAeronaves;
-import pucrs.myflight.modelo.GerenciadorAeroportos;
-import pucrs.myflight.modelo.GerenciadorCias;
-import pucrs.myflight.modelo.Voo;
+import pucrs.myflight.modelo.*;
 
 public class App {
 
@@ -12,6 +9,7 @@ public class App {
 		GerenciadorCias gc = new GerenciadorCias();
 		GerenciadorAeronaves av = new GerenciadorAeronaves();
 		GerenciadorAeroportos ap = new GerenciadorAeroportos();
+		GerenciadorVoos gv = new GerenciadorVoos();
 
 
 		gc.inserir("JJ", "LATAM Linhas Aereas");

@@ -11,7 +11,6 @@ public class Voo {
 	private Duration duracao;
 	private Rota rota;
 	private Status status;
-	private String dthpadrao;
 
 	public Voo(Rota rota, LocalDateTime datahora, Duration duracao) {
 		this.rota = rota;

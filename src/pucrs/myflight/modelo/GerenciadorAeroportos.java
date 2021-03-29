@@ -42,6 +42,11 @@ public class GerenciadorAeroportos {
         return null;
     }
 
+    public String listar(){
+        return String.format("\n%2s",
+                aeroportos);
+    }
+
     @Override
     public String toString() {
         return String.format("\n %2s",
