@@ -29,6 +29,10 @@ public class GerenciadorVoos {
         voos.add(new Voo(vRota, vDatahora, vDuracao));
     }
 
+    public void inserir(Rota vRota, Duration vDuracao){
+        voos.add(new Voo(vRota, LocalDateTime.of(2016, 8, 12, 12, 00), vDuracao));
+    }
+
     public Voo pesquisarData(LocalDateTime data){
         for(Voo v: voos){
             if(data == v.getDatahora())
