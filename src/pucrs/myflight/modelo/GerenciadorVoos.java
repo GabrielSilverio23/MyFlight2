@@ -29,6 +29,14 @@ public class GerenciadorVoos {
         voos.add(new Voo(vRota, vDatahora, vDuracao));
     }
 
+    public void inserir(Rota vRota1, Rota vRota2, LocalDateTime vDatahora, Duration vDuracao){
+        voos.add(new VooEscalas(vRota1, vRota2, vDatahora, vDuracao));
+    }
+
+    public void inserir(Rota vRota1, Rota vRota2, Rota vRota3, LocalDateTime vDatahora, Duration vDuracao){
+        voos.add(new VooVariasEscalas(vRota1, vRota2, vRota3, vDatahora, vDuracao));
+    }
+
     public void inserir(Rota vRota, Duration vDuracao){
         voos.add(new Voo(vRota, LocalDateTime.of(2016, 8, 12, 12, 00), vDuracao));
     }

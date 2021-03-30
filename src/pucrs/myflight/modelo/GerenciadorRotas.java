@@ -26,6 +26,8 @@ public class GerenciadorRotas {
         rota.add(new Rota(vCia, vOrigem, vDestino, vAeronave));
     }
 
+    //public void inserirEscala()
+
     public Rota pesquisarOrigem(Aeroporto orig){
         for(Rota rt: rota){
             if(orig == rt.getOrigem())
