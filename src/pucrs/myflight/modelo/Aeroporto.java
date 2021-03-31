@@ -31,9 +31,7 @@ public class Aeroporto {
 
 	@Override
 	public String toString() {
-		return String.format("\n%2s %2s %2s",
-				codigo,
-				nome,
-				loc);
+		return String.format("\n%2s",
+				nome);
 	}
 }

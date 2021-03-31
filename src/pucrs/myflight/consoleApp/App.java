@@ -66,11 +66,6 @@ public class App {
 
 
 
-
-
-
-
-
 		//gr.inserir(gc.pesquisar("G3"), gap.pesquisarCod("GRU"), gap.pesquisarCod("POA"), ga.pesquisar("733"));
 
 
@@ -82,10 +77,8 @@ public class App {
 		/*gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("POA")),  gr.pesquisarOrigem(gap.pesquisarCod("GRU")),
 				LocalDateTime.of(2016, 8, 15, 12, 00), Duration.ofMinutes(120));*/
 
-		gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("POA")), gr.pesquisarOrigem(gap.pesquisarCod("GRU")), gr.pesquisarOrigem(gap.pesquisarCod("MIA")),
+		gv.inserir(r1, r2, r3,
 				LocalDateTime.of(2016, 8, 15, 12, 00), Duration.ofMinutes(120));
-
-
 
 
 		//System.out.println(gc.toString());
@@ -102,7 +95,7 @@ public class App {
 		//System.out.println(gr.teste());
 		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal(), gap.pesquisarCod("mia").getLocal()));
 		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal()));
-		//System.out.println(gv.listar());
+		System.out.println(gv.listar());
 
 	}
 }

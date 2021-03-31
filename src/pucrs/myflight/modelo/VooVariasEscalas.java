@@ -18,6 +18,6 @@ public class VooVariasEscalas extends VooEscalas{
 
     @Override
     public String toString() {
-        return super.toString() + " -> "+ rota3;
+        return super.toString() + " \n\n |\n V "+ rota3;
     }
 }
