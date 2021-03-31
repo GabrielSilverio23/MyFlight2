@@ -8,11 +8,11 @@ public class GerenciadorVoos {
 
     private ArrayList<Voo> voos;
 
-    public GerenciadorVoos(){
+    private GerenciadorVoos(){
         this.voos = new ArrayList<>();
     }
 
-    public static GerenciadorVoos instance;
+    private static GerenciadorVoos instance;
 
     public static GerenciadorVoos getInstance(){
         if(instance == null)

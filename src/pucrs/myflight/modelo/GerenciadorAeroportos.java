@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class GerenciadorAeroportos {
     private ArrayList<Aeroporto> aeroportos;
 
-    public GerenciadorAeroportos(){
+    private GerenciadorAeroportos(){
         this.aeroportos = new ArrayList<>();
     }
 
-    public static GerenciadorAeroportos instance;
+    private static GerenciadorAeroportos instance;
 
     public static GerenciadorAeroportos getInstance(){
         if(instance == null)

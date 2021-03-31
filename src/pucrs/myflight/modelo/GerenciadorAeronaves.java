@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class GerenciadorAeronaves {
     private ArrayList<Aeronave> avioes;
 
-    public GerenciadorAeronaves(){
+    private GerenciadorAeronaves(){
         avioes = new ArrayList<>();
     }
 
-    public static GerenciadorAeronaves instance;
+    private static GerenciadorAeronaves instance;
 
     public static GerenciadorAeronaves getInstance(){
         if(instance == null)
@@ -30,7 +30,6 @@ public class GerenciadorAeronaves {
         for(Aeronave nav: avioes)
             if(cod.equalsIgnoreCase(nav.getCodigo()))
                 return nav;
-
         return null;
     }
 

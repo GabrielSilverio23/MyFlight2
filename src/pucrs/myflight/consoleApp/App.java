@@ -8,32 +8,71 @@ public class App {
 
 	public static void main(String[] args) {
 
-		GerenciadorCias gc = new GerenciadorCias();
-		GerenciadorAeronaves ga = new GerenciadorAeronaves();
-		GerenciadorAeroportos gap = new GerenciadorAeroportos();
-		GerenciadorVoos gv = new GerenciadorVoos();
-		GerenciadorRotas gr = new GerenciadorRotas();
+		CiaAerea c1 = new CiaAerea("JJ", "LATAM Linhas Aereas");
+		CiaAerea c2 = new CiaAerea("G3", "Gol Linhas Aereas SA");
+		CiaAerea c3 = new CiaAerea("TP", "TAP Portugal");
+		CiaAerea c4 = new CiaAerea("AD", "Azul Linhas Aereas");
+
+		GerenciadorCias gc = GerenciadorCias.getInstance();
+
+		gc.inserir(c1);
+		gc.inserir(c2);
+		gc.inserir(c3);
+		gc.inserir(c4);
 
 
-		gc.inserir("JJ", "LATAM Linhas Aereas");
-		gc.inserir("G3", "Gol Linhas Aereas SA");
-		gc.inserir("TP", "TAP Portugal");
-		gc.inserir("AD", "Azul Linhas Aereas");
 
-		ga.inserir("733", "Boeing 737-300", 140);
-		ga.inserir("73G", "Boeing 737-300", 126);
-		ga.inserir("380", "Airbus Industries A380", 644);
-		ga.inserir("764", "Boeing 767-400", 304);
+		Aeronave a1 = new Aeronave("733", "Boeing 737-300", 140);
+		Aeronave a2 = new Aeronave("73G", "Boeing 737-300", 126);
+		Aeronave a3 = new Aeronave("380", "Airbus Industries A380", 644);
+		Aeronave a4 = new Aeronave("764", "Boeing 767-400", 304);
 
-		gap.inserir("POA", "Salgado Filho Intl Apt", -29.9939, -51.1711 );
-		gap.inserir("GRU", "São Paulo Guarulhos Intl Apt", -23.4356, -46.4731 );
-		gap.inserir("LIS", "Lisbon", 38.7742, -9.1342 );
-		gap.inserir("MIA", "\tMiami International Apt", 25.7933, -80.2906 );
+		GerenciadorAeronaves ga = GerenciadorAeronaves.getInstance();
+
+		ga.inserir(a1);
+		ga.inserir(a2);
+		ga.inserir(a3);
+		ga.inserir(a4);
+
+
+
+		Aeroporto ap1 = new Aeroporto("POA", "Salgado Filho Intl Apt", -29.9939, -51.1711);
+		Aeroporto ap2 = new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", -23.4356, -46.4731);
+		Aeroporto ap3 = new Aeroporto("LIS", "Lisbon", 38.7742, -9.1342);
+		Aeroporto ap4 = new Aeroporto("MIA", "Miami International Apt", 25.7933, -80.2906 );
+
+		GerenciadorAeroportos gap = GerenciadorAeroportos.getInstance();
+
+		gap.inserir(ap1);
+		gap.inserir(ap2);
+		gap.inserir(ap3);
+		gap.inserir(ap4);
+
+
+
+		Rota r1 = new Rota(c1, ap1, ap2, a1);
+		Rota r2 = new Rota(c2, ap4, ap3, a3);
+		Rota r3 = new Rota(c3, ap3, ap4, a3);
+
+		GerenciadorRotas gr = GerenciadorRotas.getInstance();
+
+		gr.inserir(r1);
+		gr.inserir(r2);
+		gr.inserir(r3);
+
+
+
+		GerenciadorVoos gv = GerenciadorVoos.getInstance();
+
+
+
+
+
+
+
 
 		//gr.inserir(gc.pesquisar("G3"), gap.pesquisarCod("GRU"), gap.pesquisarCod("POA"), ga.pesquisar("733"));
-		gr.inserir(gc.pesquisar("G3"), gap.pesquisarCod("POA"), gap.pesquisarCod("GRU"), ga.pesquisar("733"));
-		gr.inserir(gc.pesquisar("TP"), gap.pesquisarCod("MIA"), gap.pesquisarCod("LIS"), ga.pesquisar("380"));
-		gr.inserir(gc.pesquisar("JJ"), gap.pesquisarCod("GRU"), gap.pesquisarCod("MIA"), ga.pesquisar("380"));
+
 
 
 		//gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("POA")), LocalDateTime.of(2016, 8, 10, 8, 00), Duration.ofMinutes(90));
@@ -58,12 +97,12 @@ public class App {
 		//System.out.println(gap.pesquisarNome("salgado filho intl Apt"));
 		//System.out.println(ga.listar());
 		//System.out.println(gr.pesquisarOrigem(gap.pesquisarCod("POA")));
-		System.out.println(gv.listar());
+		//System.out.println(gv.listar());
 		//System.out.println(gv.pesquisarData(LocalDateTime.of(2016, 8, 15, 12, 00)));
 		//System.out.println(gr.teste());
-		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal(), ap.pesquisarCod("GRU").getLocal()));
+		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal(), gap.pesquisarCod("mia").getLocal()));
 		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal()));
-
+		//System.out.println(gv.listar());
 
 	}
 }

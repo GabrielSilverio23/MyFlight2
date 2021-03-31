@@ -5,6 +5,12 @@ public class Aeroporto {
 	private String nome;
 	private Geo loc;
 
+	/*public Aeroporto(String codigo, String nome, Geo loc) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.loc = loc;
+	}*/
+
 	public Aeroporto(String codigo, String nome, double lat, double longi) {
 		this.codigo = codigo;
 		this.nome = nome;

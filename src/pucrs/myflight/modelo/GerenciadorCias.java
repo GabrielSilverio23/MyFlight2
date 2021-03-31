@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class GerenciadorCias {
 	private ArrayList<CiaAerea> empresas;
 
-	public GerenciadorCias() {
+	private GerenciadorCias() {
 		empresas = new ArrayList<>();
 	}
 
-	public static GerenciadorCias instance;
+	private static GerenciadorCias instance;
 
 	public static  GerenciadorCias getInstance(){
 		if(instance == null)
