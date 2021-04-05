@@ -41,17 +41,17 @@ public class GerenciadorVoos {
         voos.add(new Voo(vRota, LocalDateTime.of(2016, 8, 12, 12, 00), vDuracao));
     }
 
-    public Voo pesquisarData(LocalDateTime data){
+    public ArrayList<Voo> pesquisarData(LocalDateTime data){
+        ArrayList<Voo> dataVoo = new ArrayList<Voo>();
         for(Voo v: voos){
-            if(data == v.getDatahora())
-                return v;
+            if(v.getDatahora() == data)
+                dataVoo.add(v);
         }
-        return null;
+        return dataVoo;
     }
 
-    public String listar(){
-        return String.format("\n%2s",
-                voos);
+    public ArrayList<Voo> listar(){
+        return voos;
     }
 
     @Override

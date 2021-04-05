@@ -27,16 +27,16 @@ public class GerenciadorAeroportos {
     }
 
     public Aeroporto pesquisarCod(String cod){
-        for(Aeroporto aeroporto: aeroportos){
-            if(cod.equalsIgnoreCase(aeroporto.getCodigo()))
-                return aeroporto;
+        for(Aeroporto ae: aeroportos){
+            if(ae.getCodigo().equalsIgnoreCase(cod))
+                return ae;
         }
         return null;
     }
 
     public Aeroporto pesquisarNome(String nome){
         for(Aeroporto ae: aeroportos){
-            if(nome.equalsIgnoreCase(ae.getNome()))
+            if(ae.getNome().equalsIgnoreCase(nome))
                 return ae;
         }
         return null;

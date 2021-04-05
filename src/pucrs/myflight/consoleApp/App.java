@@ -8,6 +8,11 @@ public class App {
 
 	public static void main(String[] args) {
 
+		Geo poa = new Geo(-29.9939, -51.1711);
+		Geo gru = new Geo(-23.4356, -46.4731);
+		Geo lis = new Geo(38.7742, -9.1342);
+		Geo mia = new Geo(25.7933, -80.2906);
+
 		CiaAerea c1 = new CiaAerea("JJ", "LATAM Linhas Aereas");
 		CiaAerea c2 = new CiaAerea("G3", "Gol Linhas Aereas SA");
 		CiaAerea c3 = new CiaAerea("TP", "TAP Portugal");
@@ -36,10 +41,10 @@ public class App {
 
 
 
-		Aeroporto ap1 = new Aeroporto("POA", "Salgado Filho Intl Apt", -29.9939, -51.1711);
-		Aeroporto ap2 = new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", -23.4356, -46.4731);
-		Aeroporto ap3 = new Aeroporto("LIS", "Lisbon", 38.7742, -9.1342);
-		Aeroporto ap4 = new Aeroporto("MIA", "Miami International Apt", 25.7933, -80.2906 );
+		Aeroporto ap1 = new Aeroporto("POA", "Salgado Filho Intl Apt", poa);
+		Aeroporto ap2 = new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", gru);
+		Aeroporto ap3 = new Aeroporto("LIS", "Lisbon", lis);
+		Aeroporto ap4 = new Aeroporto("MIA", "Miami International Apt", mia);
 
 		GerenciadorAeroportos gap = GerenciadorAeroportos.getInstance();
 
