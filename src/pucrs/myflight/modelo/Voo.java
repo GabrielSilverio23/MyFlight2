@@ -1,6 +1,5 @@
 package pucrs.myflight.modelo;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 public abstract class Voo {
@@ -49,6 +48,6 @@ public abstract class Voo {
 
 	@Override
 	public String toString(){
-		return "Data: "+datahora + "\nStatus: "+status;
+		return "\nData: "+datahora + "\nStatus: "+status;
 	}
 }

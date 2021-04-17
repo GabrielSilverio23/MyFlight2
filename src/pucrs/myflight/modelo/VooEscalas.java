@@ -42,7 +42,7 @@ public class VooEscalas extends Voo{
                 escala,
                 escala.getDuracao());
 
-        return String.format(" %s \n %s\n Duração Total: %.2f",
+        return String.format("\n %s \n %s\n Duração Total: %.2f",
             super.toString(), rotaStr, getDuracao());
     }
 }

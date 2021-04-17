@@ -29,6 +29,10 @@ public class Aeroporto {
 		return loc;
 	}
 
+	public int compareTo(Aeroporto outro){
+		return this.getNome().compareTo(outro.getNome());
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%2s",

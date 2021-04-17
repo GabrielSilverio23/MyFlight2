@@ -28,6 +28,10 @@ public class VooDireto extends Voo{
     @Override
     public String toString(){
         //return "\n\n"+rota;
-        return "\n"+rota+"\n"+super.toString();
+        //return "\n"+super.toString()+"\n"+rota +"Duração: "+ rota.getDuracao() ;
+        return String.format("\n%s  \n\t%s  Duração: %.2f horas",
+                super.toString(),
+                rota,
+                rota.getDuracao());
     }
 }

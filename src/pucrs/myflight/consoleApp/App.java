@@ -1,7 +1,6 @@
 package pucrs.myflight.consoleApp;
 
 import java.time.LocalDateTime;
-import java.time.Duration;
 import pucrs.myflight.modelo.*;
 
 public class App {
@@ -61,12 +60,14 @@ public class App {
 		gap.inserir(apmia);
 
 //		System.out.println(gap.listar());
+//		gap.ordenaLista();
 //		System.out.println(gap.pesquisarCod("poa"));
 
 		//Cria as rotas
 		Rota r1 = new Rota(c1, appoa, apgru, a1);
 		Rota r2 = new Rota(c2, apmia, aplis, a3);
 		Rota r3 = new Rota(c3, aplis, apmia, a3);
+		Rota r4 = new Rota(c1, apgru, apmia, a1);
 
 		//Rota orig = new Rota(c1, appoa, apgru, a1);
 		//Rota esc = new Rota(c1, apgru, aplis, a3);
@@ -77,8 +78,11 @@ public class App {
 		gr.inserir(r1);
 		gr.inserir(r2);
 		gr.inserir(r3);
+		gr.inserir(r4);
+
 
 //		System.out.println(gr.listar());
+//		gr.ordenaLista();
 //		System.out.println(gr.pesquisarOrigem(gap.pesquisarCod("poa")));
 //		System.out.println(gr.pesquisarOrigem(appoa));
 
@@ -86,10 +90,13 @@ public class App {
 		VooDireto v1 = new VooDireto(LocalDateTime.of(2020,4,10,15,0),r1);
 		VooDireto v2 = new VooDireto(LocalDateTime.of(2020,4,12,11,0),r2);
 		VooDireto v3 = new VooDireto(LocalDateTime.of(2020,5,10,5,0),r3);
+//		System.out.println(v1);
+//		System.out.println("\n\n"+v2);
 
 		VooEscalas v4 = new VooEscalas(LocalDateTime.of(2020,04,10,17,30));
-		v4.addRota(r2);
-		v4.addRota(r3);
+		v4.addRota(r1);
+		v4.addRota(r4);
+		//System.out.println(v4);
 
 		//cria gv e insere os voos em um arraylist
 		GerenciadorVoos gv = GerenciadorVoos.getInstance();
@@ -97,52 +104,17 @@ public class App {
 		gv.inserir(v1);
 		gv.inserir(v2);
 		gv.inserir(v3);
-		//gv.inserir(v4);
+		gv.inserir(v4);
 
-		LocalDateTime dt = LocalDateTime.of(2020,4,10,15,0);
-		System.out.println(gv.listar());
+		//LocalDateTime dt = LocalDateTime.of(2020,4,10,15,0);
+//		System.out.println(gv.listar());
 		//System.out.println(gv.pesquisarData(dt));
 
-		double distancia = r1.calcDistancia();
 
-		double duracao = r1.getDuracao();
-
-
-		//System.out.println(distancia+"\n"+duracao);
+//		double distancia = r1.calcDistancia();
+//		double duracao = r1.getDuracao();
+		//System.out.println(Geo.distancia(poa, mia));
 		//System.out.println(CiaAerea.getTotalCias());
-
-		//gr.inserir(gc.pesquisar("G3"), gap.pesquisarCod("GRU"), gap.pesquisarCod("POA"), ga.pesquisar("733"));
-		//gv.inserir();
-		//gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("GRU")), LocalDateTime.of(2016, 8, 10, 15, 00), Duration.ofMinutes(120));
-		//gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("MIA")), LocalDateTime.of(2016, 8, 15, 12, 00), Duration.ofMinutes(120));
-		//gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("POA")), Duration.ofMinutes(120));
-		/*gv.inserir(gr.pesquisarOrigem(gap.pesquisarCod("POA")),  gr.pesquisarOrigem(gap.pesquisarCod("GRU")),
-				LocalDateTime.of(2016, 8, 15, 12, 00), Duration.ofMinutes(120));*/
-
-		//gv.inserir(LocalDateTime.of(2016, 8, 15, 12, 00));
-		//System.out.println(gc.toString());
-		//System.out.println(gc.listar());
-		//System.out.println(ga.toString());
-		//System.out.println(gap.toString());
-		//System.out.println(ga.pesquisar("73G"));
-		//System.out.println(gc.pesquisar("JJ"));
-		//System.out.println(gap.pesquisarCod("poa"));
-		//System.out.println(gap.pesquisarNome("salgado filho intl Apt"));
-		//System.out.println(ga.listar());
-		//System.out.println(gr.pesquisarOrigem(gap.pesquisarCod("POA")));
-		//System.out.println(gv.listar());
-		//System.out.println(gv.toString());
-		//System.out.println(gv.pesquisarData(LocalDateTime.of(2016, 8, 15, 12, 00)));
-		//System.out.println(gr.teste());
-
-		//System.out.println(gr.distancia(gap.pesquisarCod("POA").getLocal()));
-		//System.out.println("Total Cias: "+CiaAerea.getTotalCias());
-
-//		double distPoaGru = Geo.distancia(poa, gru);
-//		System.out.println(String.format("Distancia de POA a GRU é de %.2f Km.",distPoaGru));
-//		double duracao = orig.getDuracao();
-//		System.out.println(String.format("Duração do voo de POA a GRU: %.2f horas",duracao));
-
-
+		//System.out.println(distancia+"\n"+ duracao);
 	}
 }

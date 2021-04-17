@@ -1,5 +1,7 @@
 package pucrs.myflight.modelo;
 
+import java.util.Comparator;
+
 public class Rota {
 	private CiaAerea cia;
 	private Aeroporto origem;
@@ -44,13 +46,18 @@ public class Rota {
 		return duracaoH;
 	}
 
+	public int compareTo(Rota outro){
+		return this.getCia().getNome().compareTo(outro.getCia().getNome());
+	}
+
 	@Override
 	public String toString(){
-//		return String.format("\n%s %s %s -> %s",
-//				cia,
-//				aeronave,
-//				origem,	destino);
+		return String.format("\nCia: %s %s %s -> %s",
+				cia.getNome(),
+				aeronave.getDescricao(),
+				origem.getCodigo(),
+				destino.getCodigo());
 
-		return "\nCia: "+cia+"\nAeronave: "+aeronave+"\nOrigem: "+origem+"\nDestino: "+destino;
+//		return "Cia: "+cia.getNome()+"/"+aeronave.getDescricao()+" || "+origem.getCodigo()+" -> "+destino.getCodigo();
 	}
 }

@@ -1,6 +1,8 @@
 package pucrs.myflight.modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GerenciadorRotas {
     private ArrayList<Rota> rota;
@@ -36,34 +38,28 @@ public class GerenciadorRotas {
         return null;
     }
 
+
+//    public ArrayList<Rota> listar(){
+//        ArrayList<Rota> aux = new ArrayList<>();
+//        for(Rota r: rota){
+//            aux.add(r);
+//        }
+//        return aux;
+//    }
+
     public String listar(){
         return String.format("\n%2s",
                 rota);
     }
 
-    /*public static double distancia(Geo loc1, Geo loc2){
-        double lat1 = loc1.getLatitude();
-        double long1 = loc1.getLongitude();
-        double lat2 = loc2.getLatitude();
-        double long2 = loc2.getLongitude();
+    public void ordenaLista(){
+        Collections.sort(rota, new ComparatorCiaAerea());
 
-        double d = 2*6371*Math.sqrt(Math.asin(Math.pow(Math.sin((Math.toRadians(lat2)-Math.toRadians(lat1))/2),2) +
-                Math.pow(Math.sin((Math.toRadians(long2)-Math.toRadians(long1))/2),2)*
-                        Math.cos(Math.toRadians(lat2))*Math.cos(Math.toRadians(lat1))));
-        return d;
+        for(Rota r: rota){
+            System.out.println(r);
+        }
     }
 
-    public double distancia(Geo loc1){
-        double lat1 = loc1.getLatitude();
-        double long1 = loc1.getLongitude();
-        double lat2 = -23.435600; // lat2 e long2 é a localização do aeroporto de guarulhos
-        double long2 = -46.473100;
-
-        double d = 2*6371*Math.sqrt(Math.asin(Math.pow(Math.sin((Math.toRadians(lat2)-Math.toRadians(lat1))/2),2) +
-                Math.pow(Math.sin((Math.toRadians(long2)-Math.toRadians(long1))/2),2)*
-                        Math.cos(Math.toRadians(lat2))*Math.cos(Math.toRadians(lat1))));
-        return d;
-    }*/
 
     @Override
     public String toString() {

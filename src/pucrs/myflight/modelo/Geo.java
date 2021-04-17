@@ -31,7 +31,6 @@ public class Geo {
 	}
 
 	public double distancia(Geo loc1){
-
 		return Geo.distancia(this, loc1);
 	}
 
