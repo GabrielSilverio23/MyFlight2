@@ -24,8 +24,9 @@ public class CiaAerea {
 
 	@Override
 	public String toString(){
-		return String.format("\n%2s  %2s",
-				codigo,
-				nome);
+//		return String.format("\n%2s  %2s",
+//				codigo,
+//				nome);
+		return codigo+" - "+nome;
 	}
 }

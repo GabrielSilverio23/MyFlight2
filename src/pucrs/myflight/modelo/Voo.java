@@ -3,32 +3,39 @@ package pucrs.myflight.modelo;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Voo {
+public abstract class Voo {
 
 	public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 
 	private LocalDateTime datahora;
-	private Duration duracao;
+	private double duracao;
 	private Rota rota;
 	private Status status;
 
-	public Voo(Rota rota, LocalDateTime datahora, Duration duracao) {
+	public Voo(LocalDateTime datahora) {
+		this.datahora = datahora;
+		this.status = Status.CONFIRMADO; // default é confirmado
+	}
+
+	public Voo(Rota rota, LocalDateTime datahora, double duracao) {
 		this.rota = rota;
 		this.datahora = datahora;
 		this.duracao = duracao;
 		this.status = Status.CONFIRMADO; // default é confirmado
 	}
 
-	public Rota getRota() {
-		return rota;
+
+	public Voo(Rota rota, double duracao) {
+		this.rota = rota;
+		this.datahora = LocalDateTime.of(2016,8,12,12,00);
+		this.duracao = duracao;
+		this.status = Status.CONFIRMADO; // default é confirmado
 	}
+
+	public abstract Rota getRota();
 
 	public LocalDateTime getDatahora() {
 		return datahora;
-	}
-
-	public Duration getDuracao() {
-		return duracao;
 	}
 
 	public Status getStatus() {
@@ -39,12 +46,9 @@ public class Voo {
 		this.status = novo;
 	}
 
+
 	@Override
 	public String toString(){
-		return String.format("\n%s %s %s %s",
-				rota,
-				datahora,
-				duracao,
-				status);
+		return "Data: "+datahora + "\nStatus: "+status;
 	}
 }

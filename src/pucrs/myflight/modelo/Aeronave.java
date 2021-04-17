@@ -25,9 +25,10 @@ public class Aeronave {
 
 	@Override
 	public String toString(){
-		return String.format("\n%2s  %2s",
-				codigo,
-				descricao);
+//		return String.format("\n%2s  %2s",
+//				codigo,
+//				descricao);
+		return codigo+" - "+descricao;
 	}
 
 }

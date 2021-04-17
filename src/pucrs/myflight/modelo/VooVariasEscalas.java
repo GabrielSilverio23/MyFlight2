@@ -1,15 +1,20 @@
+
 package pucrs.myflight.modelo;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class VooVariasEscalas extends VooEscalas{
-
+public class VooVariasEscalas extends Voo{
+    @Deprecated
     private Rota rota3;
+    public VooVariasEscalas(LocalDateTime vDatahora){
 
-    public VooVariasEscalas(Rota vRota1, Rota vRota2, Rota vRota3, LocalDateTime vDatahora, Duration vDuracao){
-        super(vRota1, vRota2, vDatahora, vDuracao);
-        this.rota3 = vRota3;
+        super(vDatahora);
+    }
+
+    @Override
+    public Rota getRota() {
+        return null;
     }
 
     public Rota getRotaFinal(){

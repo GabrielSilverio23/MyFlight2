@@ -1,6 +1,5 @@
 package pucrs.myflight.modelo;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -9,7 +8,7 @@ public class GerenciadorVoos {
     private ArrayList<Voo> voos;
 
     private GerenciadorVoos(){
-        this.voos = new ArrayList<>();
+        voos = new ArrayList<Voo>();
     }
 
     private static GerenciadorVoos instance;
@@ -25,21 +24,24 @@ public class GerenciadorVoos {
         voos.add(v);
     }
 
-    public void inserir(Rota vRota, LocalDateTime vDatahora, Duration vDuracao){
-        voos.add(new Voo(vRota, vDatahora, vDuracao));
+    /*public void inserir(Rota vRota, LocalDateTime vDatahora, double vDuracao){
+        voos.add(new VooDireto(vDuracao, vDatahora, vRota));
+    }
+    public void inserir(LocalDateTime vDatahora, Rota vRota){
+        voos.add(new VooDireto(vDatahora, vRota));
     }
 
-    public void inserir(Rota vRota1, Rota vRota2, LocalDateTime vDatahora, Duration vDuracao){
-        voos.add(new VooEscalas(vRota1, vRota2, vDatahora, vDuracao));
-    }
+    public void inserir(LocalDateTime vDatahora){
+        voos.add(new VooEscalas(vDatahora));
+    }*/
 
-    public void inserir(Rota vRota1, Rota vRota2, Rota vRota3, LocalDateTime vDatahora, Duration vDuracao){
-        voos.add(new VooVariasEscalas(vRota1, vRota2, vRota3, vDatahora, vDuracao));
-    }
+//    public void inserir(Rota vRota1, Rota vRota2, Rota vRota3, LocalDateTime vDatahora, Duration vDuracao){
+//        voos.add(new VooVariasEscalas(vRota1, vRota2, vRota3, vDatahora, vDuracao));
+//    }
 
-    public void inserir(Rota vRota, Duration vDuracao){
+    /*public void inserir(Rota vRota, double vDuracao){
         voos.add(new Voo(vRota, LocalDateTime.of(2016, 8, 12, 12, 00), vDuracao));
-    }
+    }*/
 
     public ArrayList<Voo> pesquisarData(LocalDateTime data){
         ArrayList<Voo> dataVoo = new ArrayList<Voo>();
@@ -56,7 +58,10 @@ public class GerenciadorVoos {
 
     @Override
     public String toString() {
-        return String.format("\n %2s",
-                voos);
+        String ger = "Voos cadastrados:\n";
+        for (Voo v: voos){
+            ger = ger + v+"\n";
+        }
+        return ger;
     }
 }

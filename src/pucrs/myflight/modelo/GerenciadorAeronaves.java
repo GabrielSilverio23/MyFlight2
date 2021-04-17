@@ -33,9 +33,8 @@ public class GerenciadorAeronaves {
         return null;
     }
 
-    public String listar(){
-        return String.format("\n%2s",
-                avioes);
+    public ArrayList<Aeronave> listar(){
+        return avioes;
     }
 
     @Override

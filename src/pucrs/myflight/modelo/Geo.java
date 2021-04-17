@@ -22,23 +22,15 @@ public class Geo {
 		double long1 = loc1.getLongitude();
 		double lat2 = loc2.getLatitude();
 		double long2 = loc2.getLongitude();
+		double raioT = 6371;
 
-		double d = 2*6371*Math.sqrt(Math.asin(Math.pow(Math.sin((Math.toRadians(lat2)-Math.toRadians(lat1))/2),2) +
+		double d = 2*raioT*Math.sqrt(Math.asin(Math.pow(Math.sin((Math.toRadians(lat2)-Math.toRadians(lat1))/2),2) +
 				Math.pow(Math.sin((Math.toRadians(long2)-Math.toRadians(long1))/2),2)*
 						Math.cos(Math.toRadians(lat2))*Math.cos(Math.toRadians(lat1))));
 		return d;
 	}
 
 	public double distancia(Geo loc1){
-		/*double lat1 = loc1.getLatitude();
-		double long1 = loc1.getLongitude();
-		double lat2 = -this.latitude;
-		double long2 = this.longitude;
-
-		double d = 2*6371*Math.sqrt(Math.asin(Math.pow(Math.sin((Math.toRadians(lat2)-Math.toRadians(lat1))/2),2) +
-				Math.pow(Math.sin((Math.toRadians(long2)-Math.toRadians(long1))/2),2)*
-						Math.cos(Math.toRadians(lat2))*Math.cos(Math.toRadians(lat1))));
-		return d;*/
 
 		return Geo.distancia(this, loc1);
 	}

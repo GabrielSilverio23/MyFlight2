@@ -5,6 +5,7 @@ public class Rota {
 	private Aeroporto origem;
 	private Aeroporto destino;
 	private Aeronave aeronave;
+	private double duracao;
 	
 	public Rota(CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
 		this.cia = cia;
@@ -29,12 +30,27 @@ public class Rota {
 		return aeronave;
 	}
 
+	public double calcDistancia(){
+		return Geo.distancia(origem.getLocal(), destino.getLocal());
+	}
+
+	public double getDuracao(){
+
+		double distancia = calcDistancia();
+
+		double velocidade = 805.1;
+
+		double duracaoH = 0.5+distancia*1.0/velocidade;
+		return duracaoH;
+	}
+
 	@Override
 	public String toString(){
-		return String.format("\n%s %s %s %s",
-				cia,
-				origem,
-				destino,
-				aeronave);
+//		return String.format("\n%s %s %s -> %s",
+//				cia,
+//				aeronave,
+//				origem,	destino);
+
+		return "\nCia: "+cia+"\nAeronave: "+aeronave+"\nOrigem: "+origem+"\nDestino: "+destino;
 	}
 }

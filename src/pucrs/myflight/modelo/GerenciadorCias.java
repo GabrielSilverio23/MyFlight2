@@ -26,6 +26,14 @@ public class GerenciadorCias {
 		empresas.add(new CiaAerea(umCodigo, umNome));
 	}
 
+	public ArrayList<CiaAerea> listar() {
+		ArrayList<CiaAerea> aux = new ArrayList<>();
+		for( CiaAerea cia : empresas){
+			aux.add(cia);
+		}
+		return aux;
+	}
+
 	public CiaAerea pesquisar(String cod){
 		for(CiaAerea cia: empresas){
 			if(cod.equalsIgnoreCase(cia.getCodigo()))
