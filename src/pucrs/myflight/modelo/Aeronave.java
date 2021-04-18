@@ -1,6 +1,8 @@
 //Gabriel Silverio, 20106468-0
 //MyFlight
 
+//esta eh uma classe modelo que recebe os dados necessario de uma aeronave
+
 package pucrs.myflight.modelo;
 
 public class Aeronave {
@@ -28,10 +30,7 @@ public class Aeronave {
 
 	@Override
 	public String toString(){
-//		return String.format("\n%2s  %2s",
-//				codigo,
-//				descricao);
-		return codigo+" - "+descricao;
+		return "\n"+codigo+" - "+descricao+" - "+capacidade;
 	}
 
 }

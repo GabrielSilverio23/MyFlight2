@@ -1,8 +1,9 @@
 //Gabriel Silverio, 20106468-0
 //MyFlight
 
-package pucrs.myflight.modelo;
+//classe responsável por gerenciar a classe modelo de aeronave.
 
+package pucrs.myflight.modelo;
 import java.util.ArrayList;
 
 public class GerenciadorAeronaves {

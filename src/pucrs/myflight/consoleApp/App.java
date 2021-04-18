@@ -1,5 +1,10 @@
-//Gabriel Silverio, 20106468-0
+//Gabriel Silverio, 20106468
 //MyFlight
+
+//Nesta classe é testado o codigo do MyFlight.
+//Foi criado um objeto para quase todas as classes e feito um insert de dados.
+//Todos os comandos que testam cada classe estão comentados, basta remover o '//'.
+//até o momento foi realizado quase todos os exercicios sobre o MyFlight, falta apenas o buscar por data que aparentemente nao esta funcionando.
 
 package pucrs.myflight.consoleApp;
 
@@ -15,6 +20,7 @@ public class App {
 		Geo lis = new Geo(38.7742, -9.1342);
 		Geo mia = new Geo(25.7933, -80.2906);
 
+		//Testa o metodo que calcula a distancia
 		//System.out.println(Geo.distancia(poa, gru));
 
 		//Cria as companhias aereas
@@ -29,7 +35,7 @@ public class App {
 		gc.inserir(c2);
 		gc.inserir(c3);
 		gc.inserir(c4);
-
+//		Testa o metodo listar e pesquisar da classe GerenciadorCias
 //		System.out.println(gc.listar());
 //		System.out.println(gc.pesquisar("JJ"));
 
@@ -45,7 +51,7 @@ public class App {
 		ga.inserir(a2);
 		ga.inserir(a3);
 		ga.inserir(a4);
-
+//		Testa o metodo listar e pesquisar da classe GerenciadorAeronaves
 //		System.out.println(ga.listar());
 //		System.out.println(ga.pesquisar("733"));
 
@@ -61,7 +67,7 @@ public class App {
 		gap.inserir(apgru);
 		gap.inserir(aplis);
 		gap.inserir(apmia);
-
+//		Testa o metodo listar, pesquisar e ordenar da classe GerenciadorAeroportos
 //		System.out.println(gap.listar());
 //		gap.ordenaLista();
 //		System.out.println(gap.pesquisarCod("poa"));
@@ -72,30 +78,23 @@ public class App {
 		Rota r3 = new Rota(c3, aplis, apmia, a3);
 		Rota r4 = new Rota(c1, apgru, apmia, a1);
 
-		//Rota orig = new Rota(c1, appoa, apgru, a1);
-		//Rota esc = new Rota(c1, apgru, aplis, a3);
-		//Rota dest = new Rota(c1, aplis, apmia, a3);
-
 		//cria gr e insere as rotas em um arraylist
 		GerenciadorRotas gr = GerenciadorRotas.getInstance();
 		gr.inserir(r1);
 		gr.inserir(r2);
 		gr.inserir(r3);
 		gr.inserir(r4);
-
-
+//		Testa o metodo listar, ordenar e pesquisar da classe GerenciadorRotas
 //		System.out.println(gr.listar());
 //		gr.ordenaLista();
 //		System.out.println(gr.pesquisarOrigem(gap.pesquisarCod("poa")));
 //		System.out.println(gr.pesquisarOrigem(appoa));
 
-		//cria os voos
+		//cria os voos diretos
 		VooDireto v1 = new VooDireto(LocalDateTime.of(2020,4,10,15,0),r1);
 		VooDireto v2 = new VooDireto(LocalDateTime.of(2020,4,12,11,0),r2);
 		VooDireto v3 = new VooDireto(LocalDateTime.of(2020,5,10,5,0),r3);
-//		System.out.println(v1);
-//		System.out.println("\n\n"+v2);
-
+//		cria o voo com escala e adiciona rotas
 		VooEscalas v4 = new VooEscalas(LocalDateTime.of(2020,04,10,17,30));
 		v4.addRota(r1);
 		v4.addRota(r4);
@@ -109,7 +108,7 @@ public class App {
 		gv.inserir(v3);
 		gv.inserir(v4);
 
-		//LocalDateTime dt = LocalDateTime.of(2020,4,10,15,0);
+//		Testa o pesquisar data(a principio ainda nao funciona) e listar da classe GerenciadorVoos
 //		System.out.println(gv.listar());
 		//System.out.println(gv.pesquisarData(dt));
 
